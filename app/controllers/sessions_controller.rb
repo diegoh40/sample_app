@@ -14,6 +14,9 @@ class SessionsController < ApplicationController
         message = "Account not activated. "
         message += "Check you email for the activation link"
         flash[:warning]= message
+
+
+        
         redirect_to root_url
       end
     else
@@ -21,7 +24,7 @@ class SessionsController < ApplicationController
       render 'new', status: :unprocessable_entity
     end
   end
-  
+
 
   def destroy
     log_out if logged_in?
